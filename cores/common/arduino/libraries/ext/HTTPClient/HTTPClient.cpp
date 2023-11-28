@@ -34,7 +34,7 @@
 #include <WiFiClientSecure.h>
 #endif
 
-// #include <StreamString.h>
+#include <StreamString.h>
 #include <base64.h>
 
 #include "HTTPClient.h"
@@ -922,7 +922,7 @@ int HTTPClient::writeToStream(Stream *stream) {
  * return all payload as String (may need lot of ram or trigger out of memory!)
  * @return String
  */
-/* String HTTPClient::getString(void) {
+String HTTPClient::getString(void) {
 	// _size can be -1 when Server sends no Content-Length header
 	if (_size > 0 || _size == -1) {
 		StreamString sstring;
@@ -936,7 +936,7 @@ int HTTPClient::writeToStream(Stream *stream) {
 	}
 
 	return "";
-} */
+}
 
 /**
  * converts error code to String
@@ -1472,6 +1472,7 @@ void HTTPClient::clearAllCookies() {
 }
 
 void HTTPClient::setCookie(String date, String headerValue) {
+	/*
 	if (!_cookieJar) {
 		return;
 	}
@@ -1593,6 +1594,7 @@ void HTTPClient::setCookie(String date, String headerValue) {
 	// add cookie to jar
 	if (!found && !(cookie.max_age.valid && cookie.max_age.duration <= 0))
 		_cookieJar->push_back(cookie);
+	*/
 }
 
 bool HTTPClient::generateCookieString(String *cookieString) {

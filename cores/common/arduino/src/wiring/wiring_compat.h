@@ -33,10 +33,11 @@ extern "C" {
 // Default values from sdkconfig.h
 #define CONFIG_LWIP_MAX_ACTIVE_TCP 16
 
-#ifdef __cplusplus
-String ipToString(const IPAddress &ip);
-#endif
 
 #ifdef __cplusplus
 } // extern "C"
+#endif
+
+#ifdef __cplusplus
+String ipToString(const IPAddress &ip);
 #endif
